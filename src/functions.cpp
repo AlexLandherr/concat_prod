@@ -1,4 +1,6 @@
 #include "include/functions.h"
+#include <string>
+#include <cstdint>
 
 /*
 Take the number 192 and multiply it by each of 1, 2, and 3:
@@ -16,4 +18,23 @@ What is the largest 1 to 9 pandigital 9-digit number that can be formed as the c
 (1, 2,...,n) where n > 1?
 */
 
-namespace func {}
+namespace func {
+    bool is_1_to_n_pandigital(const std::string &num_str, const int64_t &n, const int64_t &num_length) {
+        if (num_length < n) {
+            return false;
+        }
+        std::string necessary_digits;
+        for (int i = 1; i <= n; i++) {
+            necessary_digits = necessary_digits + std::to_string(i);
+        }
+        bool is_1_to_n_pandigital = true;
+
+        for (char c : necessary_digits) {
+            if (num_str.find(c) == std::string::npos) {
+                is_1_to_n_pandigital = false;
+            }
+        }
+
+        return is_1_to_n_pandigital;
+    }
+}

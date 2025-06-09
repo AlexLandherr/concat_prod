@@ -1,5 +1,8 @@
 #include "include/functions.h"
 #include <iostream>
+#include <string>
+#include <cstdint>
+#include <ios>
 
 /*
 Take the number 192 and multiply it by each of 1, 2, and 3:
@@ -18,6 +21,11 @@ What is the largest 1 to 9 pandigital 9-digit number that can be formed as the c
 */
 
 int main() {
+    std::string test_num_str = "192384576";
+    int64_t n = 9;
+    int64_t num_length = test_num_str.size();
+    bool result = func::is_1_to_n_pandigital(test_num_str, n, num_length);
+    std::cout << "Is the test number string 1 to " << n << " pandigital?: " << std::boolalpha << result << '\n';
 
     return 0;
 }
