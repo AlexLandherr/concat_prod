@@ -32,6 +32,7 @@ namespace func {
         for (char c : necessary_digits) {
             if (num_str.find(c) == std::string::npos) {
                 is_1_to_n_pandigital = false;
+                break;
             }
         }
 
