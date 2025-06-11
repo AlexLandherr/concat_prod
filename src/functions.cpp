@@ -38,4 +38,17 @@ namespace func {
 
         return is_1_to_n_pandigital;
     }
+
+    int64_t solver(const int64_t &n, const int64_t &num_length) {
+        int64_t result;
+        for (int64_t i = 9876; i > 9000; i--) {
+            std::string candidate = std::to_string(i) + std::to_string(2 * i);
+            if (is_1_to_n_pandigital(candidate, n, num_length)) {
+                result = std::stol(candidate);
+                break;
+            }
+        }
+
+        return result;
+    }
 }

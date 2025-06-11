@@ -21,11 +21,10 @@ What is the largest 1 to 9 pandigital 9-digit number that can be formed as the c
 */
 
 int main() {
-    std::string test_num_str = "112384576";
     int64_t n = 9;
-    int64_t num_length = test_num_str.size();
-    bool result = func::is_1_to_n_pandigital(test_num_str, n, num_length);
-    std::cout << "Is the test number string 1 to " << n << " pandigital?: " << std::boolalpha << result << '\n';
+    int64_t num_length = 9;
+    int64_t result = func::solver(n, num_length);
+    std::cout << "The answer is: " << result << '\n';
 
     return 0;
 }
